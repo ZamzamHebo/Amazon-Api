@@ -7,7 +7,11 @@ dotenv.config();
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 const app = express();
 
-app.use(cors({ origin: true }));
+app.use(
+  cors({
+    origin: "https://silly-monstera-b64b7f.netlify.app",
+  })
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {
